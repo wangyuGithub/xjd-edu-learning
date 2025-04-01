@@ -27,7 +27,7 @@ public class ThirdPartWechatMpLoginSupport extends AbsLoginSupport {
 
     @Override
     public List<LoginTypeEnum> type() {
-        return Lists.newArrayList(LoginTypeEnum.THIRD_PART_WECHAT_MP, LoginTypeEnum.THIRD_PART_WECHAT_MP_PLAYMATE);
+        return Lists.newArrayList(LoginTypeEnum.THIRD_PART_WECHAT_MP);
     }
 
     @Override

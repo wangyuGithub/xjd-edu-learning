@@ -19,7 +19,7 @@ import java.util.List;
 public class ThirdPartWechatAppLoginSupport extends AbsLoginSupport {
     @Override
     public List<LoginTypeEnum> type() {
-        return Lists.newArrayList(LoginTypeEnum.THIRD_PART_WECHAT_APP, LoginTypeEnum.THIRD_PART_WECHAT_APP_PLAYMATE);
+        return Lists.newArrayList(LoginTypeEnum.THIRD_PART_WECHAT_APP);
     }
 
     @Override

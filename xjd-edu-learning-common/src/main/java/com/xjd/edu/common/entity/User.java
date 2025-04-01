@@ -42,7 +42,6 @@ public class User implements Serializable {
 
     @Excel(name = "年龄", orderNum = "4", width = 15)
     private Integer age;
-
     /**
      * 星座
      */
@@ -60,12 +59,13 @@ public class User implements Serializable {
     private String city;
     //头像URL
     private String headPortraitsUrl;
+
     private String micFrameUrl;
     // 动态头像
     private String dynamicHeadPortraitsUrl;
     //身份证
     private String idcard;
-    //1:普通用户,2:打手,3:渠道商
+    //1:普通用户
     private Integer type;
     //信息认证(0未认证,1认证中,2审核通过,3冻结)
     private Integer userInfoAuth;
@@ -73,48 +73,14 @@ public class User implements Serializable {
     private String password;
     //    @JsonIgnore
     private String salt;
-    private String imId;
-    private String imPsw;
+
     private Integer sourceId;
+
     private BigDecimal balance;
-    //充值零钱（不可提现）
-    private BigDecimal chargeBalance;
-    //虚拟零钱（对应钻石数量）
-    private Long virtualBalance;
-    //魅力值
-    @Excel(name = "魅力值", orderNum = "18", width = 15)
-    private Long charm;
-    //累计总提现魅力值
-    private Long charmDrawSum;
+
     //状态(0封禁,1为解封)
     private Integer status;
-    //会员经验值
-    private Long memberExp;
 
-    //@EditField(unitName = "基本资料", fieldName = "虚拟经验值", fieldType = AdminEditFieldTypeEnum.TEXT)
-    private Long virtualMemberExp;
-
-    //app openId
-    private String appOpenId;
-    //qq openId
-    private String qqOpenId;
-
-    //    @JsonIgnore
-    private String openId;
-
-    //    @JsonIgnore
-    private String pointOpenId;
-
-    //    @JsonIgnore
-    private String publicOpenId;
-
-    //    @JsonIgnore
-    private String unionId;
-
-    //用户给该陪玩师打的综合评分
-    private BigDecimal scoreAvg;
-    //用户总积分
-    private Integer userScore;
     //注册ip
     @Excel(name = "注册IP", exportFormat = "yyyy-MM-dd HH:mm:ss", orderNum = "15", width = 35)
     private String registIp;
@@ -140,6 +106,7 @@ public class User implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @Excel(name = "最后登录时间", exportFormat = "yyyy-MM-dd HH:mm:ss", orderNum = "15", width = 20)
     private Date loginTime;
+
     // 注册来源类型
     private Integer registerType;
 
@@ -150,10 +117,6 @@ public class User implements Serializable {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date activeTime;
-
-    private Integer ordersTakeStatus;//陪玩师接单状态
-
-    private Integer quickServerStatus;//陪玩师秒接单状态
 
     private boolean isCancel;
     /**
@@ -175,28 +138,14 @@ public class User implements Serializable {
         isCancel = cancel;
     }
 
-    private Integer platformAuth;//认证状态,0未认证,1认证达人，2官方认证
-
     /**
      * 是否是注册
      */
     private boolean isNewUser = Boolean.FALSE;
 
-
-
-    /**
-     * 获取用户经验值(虚拟的加上真实的)
-     *
-     * @return
-     */
-    public Long getLastMemberExp() {
-        Long memberExp = getMemberExp() == null ? 0 : getMemberExp();
-        Long virtualMemberExp = getVirtualMemberExp() == null ? 0 : getVirtualMemberExp();
-        return memberExp + virtualMemberExp;
-    }
-
     //是否可见 int默认值 3:全部可见
     private Integer visible;
+
     /**
      * app类型
      */

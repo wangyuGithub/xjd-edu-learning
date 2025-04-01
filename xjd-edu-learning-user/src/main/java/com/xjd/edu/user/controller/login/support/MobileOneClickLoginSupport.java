@@ -5,7 +5,6 @@ import com.xjd.edu.common.entity.User;
 import com.xjd.edu.common.enums.LoginTypeEnum;
 import com.xjd.edu.common.model.login.LoginModel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -19,10 +18,10 @@ import java.util.List;
 @Component
 public class MobileOneClickLoginSupport extends AbsLoginSupport {
 
-    @Value("${config.aliMobileVerification.accessKeyId}")
-    private String accessKeyId;
-    @Value("${config.aliMobileVerification.secretx}")
-    private String secretx;
+    //@Value("${config.aliMobileVerification.accessKeyId}")
+    //private String accessKeyId;
+    //@Value("${config.aliMobileVerification.secretx}")
+    //private String secretx;
 
     //@Autowired
     //private AppUserDeviceService appUserDeviceService;

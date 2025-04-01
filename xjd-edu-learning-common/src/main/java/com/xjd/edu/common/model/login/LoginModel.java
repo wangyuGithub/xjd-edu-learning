@@ -45,13 +45,17 @@ public class LoginModel implements Serializable {
     //private ClientInfo clientInfo;
 
     private String ip;
+
     private String keyword;
+
     private Date searchTime;
 
     private Integer type;
 
     private String openId;
+
     private Integer loginType;
+
     private String verifyCode;
 
     private boolean encrypt;
@@ -60,30 +64,20 @@ public class LoginModel implements Serializable {
 
     /* ========== 控制台 =========== */
     private String username;
+
     private String password;
+
     private String captcha;
 
     private Integer hostType;
 
-    /* ========== 百度小程序 =========== */
-    private String deviceId;
-
-    private String encryptedData;
-
-    private String iv;
-
     /* =========== 绑定多账号 =========== */
-    // 原账号的token
-    private String originToken;
 
     // 设备凭证
     private String deviceCert;
 
     /* =========== 多账号快捷登录 =========== */
     private User user;
-
-    /* =========== 数美 =========== */
-    private String shumeiModel;
 
 
 }
