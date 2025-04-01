@@ -1,0 +1,54 @@
+server:
+  port: 9999
+
+biz:
+  logging:
+    chain_sample_rate: 20
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  redis:
+#    host: 121.199.173.153
+#    port: 6379
+#    password: 20240511
+#    lettuce:
+#      pool:
+#        max-idle: 100
+#        min-idle: 10
+#        max-active: 100
+#        max-wait: PT60S
+#    default:
+#      host: 121.199.173.153
+#      port: 6379
+#      password: 20240511
+#      lettuce:
+#        pool:
+#          max-active: 8
+#          max-wait: -1ms
+#          max-idle: 8
+#          min-idle: 0
+
+#      - /api/user/getInfo
+#      - /api/user/admin/sysmenu/getRouters
+config:
+  anon-url:
+    - /api/system/validate/code
+    - /api/system/user/login
+    - /api/user/login
+  evn:
+    prefix: PROD
+  host-config:
+    h5: h5.com
+    h5-playmate: h5Playmate.com
+    app: app.com
+    app-playmate: appPlaymate.com
+    pipi-admin: localhost
+    guild-center: guildCenter.com
+
+reactor:
+  netty:
+    worker-count: 16
+    pool:
+      pendingAcquireMaxCount: 1
+      leasingStrategy: FIFO
+

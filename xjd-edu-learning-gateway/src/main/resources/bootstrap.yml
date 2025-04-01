@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: xjd-edu-learning-gateway
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: ${ENV_CONF_NS_KEY:dev}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${ENV_CONF_SERVER:127.0.0.1:8848}
+      config:
+        enabled: true
+        server-addr: ${ENV_CONF_SERVER:127.0.0.1:8848}
+        #username: ${ENV_CONF_USERNAME:nacos}
+        #password: ${ENV_CONF_PASSWORD:123456}
+        #namespace: ${ENV_CONF_NS_VALUE:2406ae65-1d14-4e63-911c-728880e4cc65}
+        file-extension: yaml
+        name: ${spring.application.name}
+        extension-configs:
+          - data-id: gateway-router.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: gateway-router-path.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+        shared-configs: # 共享配置
+          - data-id: shared.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: shared-redis.yaml #共享redis配置
+            group: DEFAULT_GROUP
+            refresh: true

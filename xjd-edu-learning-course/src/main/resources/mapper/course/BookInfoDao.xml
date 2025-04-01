@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xjd.edu.course.dao.course.BookInfoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.xjd.edu.course.entity.course.BookInfoEntity" id="bookInfoMap">
+        <result property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="libType" column="lib_type"/>
+        <result property="putaway" column="putaway"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="grade" column="grade"/>
+        <result property="coverPic" column="cover_pic"/>
+        <result property="phase" column="phase"/>
+        <result property="name" column="name"/>
+        <result property="author" column="author"/>
+        <result property="press" column="press"/>
+        <result property="publicationTime" column="publication_time"/>
+        <result property="introduce" column="introduce"/>
+        <result property="mustRead" column="must_read"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createId" column="create_id"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="updateId" column="update_id"/>
+        <result property="remark" column="remark"/>
+        <result property="subject" column="subject"/>
+        <result property="moduleId" column="module_id"/>
+        <result property="term" column="term"/>
+        <result property="bookVersion" column="book_version"/>
+        <result property="attachmentUrl" column="attachment_url"/>
+        <result property="greenBookId" column="green_book_id"/>
+        <result property="nanoboxBookId" column="nanobox_book_id"/>
+        <result property="version" column="version"/>
+        <result property="lastUpdate" column="last_update"/>
+        <result property="isbn" column="isbn"/>
+        <result property="knowledgeGraphId" column="knowledge_graph_id"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: xjd-edu-learning-course
+  profiles:
+    active: ${ENV_CONF_NS_KEY:dev}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        #username: ${ENV_CONF_USERNAME:nacos}
+        #password: ${ENV_CONF_PASSWORD:123456}
+        #namespace: ${ENV_CONF_NS_VALUE:2406ae65-1d14-4e63-911c-728880e4cc65}
+        file-extension: yaml
+        name: ${spring.application.name}
+        shared-configs: # 共享配置
+          - data-id: shared-jdbc.yaml #共享jdbc/mybatis配置
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: shared-redis.yaml #共享redis配置
+            group: DEFAULT_GROUP
+            refresh: true
+          #- data-id: shared.yaml #共享redis配置
+          #  group: DEFAULT_GROUP
+          #  refresh: true
+
+        #extension-configs: # 扩展配置
+        #  - data-id: gateway-router-path-dev.yaml
+        #    group: DEFAULT_GROUP
+        #    refresh: true
+
+
+
+
+
+
+
+
+
+#  profiles:
+#    active: ${ENV_CONF_NS_KEY:dev1}
+#  cloud:
+#    nacos:
+#      config:
+#        enabled: true
+#        server-addr: ${ENV_CONF_SERVER:http://nacos-dev.peilian.fun}
+#        username: ${ENV_CONF_USERNAME:dev}
+#        password: ${ENV_CONF_PASSWORD:pipi2022Za}
+#        namespace: ${ENV_CONF_NS_VALUE:2406ae65-1d14-4e63-911c-728880e4cc65}
+#        file-extension: yaml
+#        name: ${spring.application.name}
+#        extension-configs:
+#          - data-id: gateway-router-path.yaml
+#            group: DEFAULT_GROUP
+#            refresh: true
+#          - data-id: gateway-router.yaml
+#            group: DEFAULT_GROUP
+#            refresh: true
+#        shared-configs:
+#          - data-id: shared.yaml
+#            group: DEFAULT_GROUP
+#            refresh: true
+#          - data-id: common-${spring.profiles.active}.yaml
+#            group: DEFAULT_GROUP
+#            refresh: true

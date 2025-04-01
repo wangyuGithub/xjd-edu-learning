@@ -1,0 +1,35 @@
+server:
+  port: 7003
+
+#spring:
+#  redis:
+#    default:
+#      host: 121.199.173.153
+#      port: 6379
+#      password: 20240511
+#      lettuce:
+#        pool:
+#          max-active: 8
+#          max-wait: -1ms
+#          max-idle: 8
+#          min-idle: 0
+
+config:
+  evn:
+    prefix: PROD
+    test-diff: test1
+  host-config:
+    h5: h5.com
+    h5-playmate: h5Playmate.com
+    app: app.com
+    app-playmate: appPlaymate.com
+    pipi-admin: pipiAdmin.com
+    guild-center: guildCenter.com
+#图形验证码
+security:
+  captcha:
+    enabled: true
+    type: math
+
+
+
