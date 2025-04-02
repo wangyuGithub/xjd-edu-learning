@@ -3,6 +3,8 @@ package com.xjd.edu.user.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xjd.edu.api.course.CourseClient;
 import com.xjd.edu.api.user.UserClient;
+import com.xjd.edu.common.entity.User;
+import com.xjd.edu.common.utils.SubjectUtil;
 import com.xjd.edu.toolkit.cache.GameRedisTemplate;
 import com.xjd.edu.user.dao.course.BookInfoDao;
 import com.xjd.edu.user.dao.user.UserDao;
@@ -54,5 +56,16 @@ public class UserController {
         map.put("feign courseClient", courseClient.info());
         return map;
     }
+
+
+    @RequestMapping("/getUserInfo")
+    public Object getUserInfo() {
+        // 获取当前用户信息
+        User user = (User) SubjectUtil.getCurrentUser();
+        System.out.println(user);
+        return user;
+    }
+
+
 
 }

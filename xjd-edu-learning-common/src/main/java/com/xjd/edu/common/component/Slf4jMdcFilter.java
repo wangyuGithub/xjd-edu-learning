@@ -59,21 +59,6 @@ public class Slf4jMdcFilter implements Filter {
 
     }
 
-    /**
-     * 构造限流响应
-     *
-     * @param request
-     * @param response
-     */
-    private void buildLimitResponse(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        log.warn("CP接口发生限流 uri: {}", request.getRequestURI());
-        response.sendError(429, "CP接口发生限流");
-    }
-
-    private boolean isCpService() {
-        return StringUtils.containsIgnoreCase(environment.getProperty("spring.application.name"), "-cp-");
-    }
-
     @Override
     public void destroy() {
         log.info("Slf4jMdcFilter.destroy()");
